@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="th">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>OMG QR Scanner 2.2.2</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="app">
+    <header class="header">
+      <img class="logo-image" src="icon/logo.svg" alt="OMG QR Scanner logo">
+      <div class="brand-copy">
+        <h1>OMG QR Scanner 2.2.2</h1>
+        <p>สแกน QR Code จากหน้าจอ ภาพ และ PDF</p>
+      </div>
+    </header>
+
+    <nav class="tabs" role="tablist" aria-label="โหมดการสแกน">
+      <button class="tab active" data-tab="instant" role="tab" aria-selected="true">▣ สแกนทันที</button>
+      <button class="tab" data-tab="file" role="tab" aria-selected="false">▧ สแกนจากไฟล์</button>
+    </nav>
+
+    <section class="tab-panel active" data-panel="instant" role="tabpanel">
+      <section class="panel">
+        <div class="section-title">สแกนหน้าจอที่มองเห็น</div>
+        <p class="muted">จับภาพเฉพาะส่วนที่มองเห็นในแท็บปัจจุบัน รวมถึงหน้าเว็บหรือ PDF Viewer</p>
+        <button id="scanPage" class="btn btn-primary"><span>⌕</span> สแกนหน้าจอทันที</button>
+      </section>
+    </section>
+
+    <section class="tab-panel" data-panel="file" role="tabpanel" hidden>
+      <section class="panel">
+        <div class="section-title">สแกนภาพหรือ PDF</div>
+        <p class="muted">PDF จะตรวจทุกหน้าโดยอัตโนมัติ</p>
+        <label class="dropzone" id="dropzone" for="fileInput">
+          <span class="upload-icon">↑</span>
+          <strong>เลือกไฟล์หรือลากมาวางที่นี่</strong>
+          <small>PNG, JPG, JPEG, WEBP, PDF (สูงสุด 100 MB)</small>
+        </label>
+        <input id="fileInput" type="file" accept="image/png,image/jpeg,image/webp,image/bmp,image/gif,application/pdf,.pdf">
+      </section>
+    </section>
+
+    <section class="status-wrap" aria-live="polite">
+      <div class="status-head"><span class="pulse" id="statusDot"></span><strong id="status">พร้อมสแกน</strong></div>
+      <div class="progress-track"><div id="progressBar"></div></div>
+      <div id="statusDetail" class="muted small">ประมวลผลภายในเครื่องของคุณ</div>
+    </section>
+
+    <section id="resultsSection" hidden>
+      <div class="results-heading">
+        <div><div class="section-title">ผลการสแกน</div><div id="resultCount" class="muted small">0 รายการ</div></div>
+        <button id="clearResults" class="btn btn-light btn-small">ล้างข้อมูลทั้งหมด</button>
+      </div>
+      <div id="results"></div>
+    </section>
+
+    <section id="previewSection" hidden>
+      <div class="preview-heading"><div class="section-title">ตัวอย่างภาพที่สแกน</div></div>
+      <canvas id="preview" aria-label="ตัวอย่างภาพที่สแกน"></canvas>
+    </section>
+
+    <footer><span>พัฒนาโดย</span><strong class="developer-mark">OMG</strong><small>OMG QR Scanner 2.2.2 · ประมวลผลในเครื่อง</small></footer>
+  </main>
+  <script src="lib/jsQR.js"></script>
+  <script type="module" src="popup.js"></script>
+</body>
+</html>

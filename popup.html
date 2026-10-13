@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="th">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>QR Scanner Pro</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="app">
+    <header class="header">
+      <div class="logo">⌗</div>
+      <div>
+        <h1>QR Scanner <span>PRO</span></h1>
+        <p>Web · PDF · Image</p>
+      </div>
+    </header>
+
+    <section class="panel">
+      <div class="section-title">สแกนจากหน้าจอ</div>
+      <p class="muted">จับภาพพื้นที่ที่มองเห็นในแท็บปัจจุบัน รวมถึง PDF ที่เปิดใน Chrome</p>
+      <button id="scanPage" class="btn btn-primary">
+        <span>⌕</span> สแกนหน้าจอทันที
+      </button>
+      <label class="toggle-row" for="autoScan">
+        <span><strong>สแกนอัตโนมัติเมื่อเปิด Popup</strong><small>เริ่มสแกนทันทีที่เปิดส่วนขยาย</small></span>
+        <input id="autoScan" type="checkbox" checked>
+      </label>
+    </section>
+
+    <section class="panel">
+      <div class="section-title">สแกนจากไฟล์</div>
+      <label class="dropzone" id="dropzone" for="fileInput">
+        <span class="upload-icon">↑</span>
+        <strong>เลือกไฟล์หรือลากมาวางที่นี่</strong>
+        <small>PNG, JPG, JPEG, WEBP, PDF</small>
+      </label>
+      <input id="fileInput" type="file" accept="image/png,image/jpeg,image/webp,application/pdf,.pdf">
+    </section>
+
+    <section class="status-wrap">
+      <div class="status-head">
+        <span class="pulse" id="statusDot"></span>
+        <strong id="status">พร้อมสแกน</strong>
+      </div>
+      <div class="progress-track"><div id="progressBar"></div></div>
+      <div id="statusDetail" class="muted small">ระบบจะประมวลผลในเครื่องของคุณ</div>
+    </section>
+
+    <section id="resultsSection" hidden>
+      <div class="results-heading">
+        <div><div class="section-title">ผลการสแกน</div><div id="resultCount" class="muted small">0 รายการ</div></div>
+        <button id="clearResults" class="btn btn-light btn-small">ล้างผล</button>
+      </div>
+      <div id="results"></div>
+    </section>
+
+    <section id="previewSection" hidden>
+      <div class="section-title">ตัวอย่างภาพที่สแกน</div>
+      <canvas id="preview"></canvas>
+    </section>
+
+    <footer>QR Scanner Pro v2.0 · ประมวลผลในเครื่อง</footer>
+  </main>
+  <script src="lib/jsQR.js"></script>
+  <script type="module" src="popup.js"></script>
+</body>
+</html>

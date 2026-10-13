@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128">
+ <defs><linearGradient id="g" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#4386ff"/><stop offset="1" stop-color="#173cb7"/></linearGradient></defs>
+ <rect x="2" y="2" width="124" height="124" rx="28" fill="url(#g)"/>
+ <g fill="none" stroke="#fff" stroke-width="7" stroke-linejoin="round">
+  <rect x="19" y="19" width="35" height="35" rx="3"/><rect x="27" y="27" width="19" height="19" rx="1"/>
+  <rect x="74" y="19" width="35" height="35" rx="3"/><rect x="82" y="27" width="19" height="19" rx="1"/>
+  <rect x="19" y="74" width="35" height="35" rx="3"/><rect x="27" y="82" width="19" height="19" rx="1"/>
+  <path d="M66 20h8v8h-8zM66 39h8v8h-8zM62 61h12v12H62zM82 62h8v8h-8zM99 62h10v10H99zM64 83h9v9h-9zM81 82h9v9h-9zM96 82h13v13H96zM65 101h24v8H65zM101 101h8v8h-8z" fill="#fff" stroke="none"/>
+ </g>
+ <path d="M58 92h52a7 7 0 0 1 7 7v17H58z" fill="#fff" opacity=".97"/>
+ <text x="86" y="109" font-family="Arial,sans-serif" font-size="15" font-weight="800" fill="#1d49c7" text-anchor="middle">OMG</text>
+</svg>
